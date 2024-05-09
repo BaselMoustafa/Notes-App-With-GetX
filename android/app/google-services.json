@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "889941125298",
+    "project_id": "notes-app-with-getx",
+    "storage_bucket": "notes-app-with-getx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889941125298:android:26d08f7e3cf413fcc501ab",
+        "android_client_info": {
+          "package_name": "com.example.notes_app_with_getx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfhec44aoc98HCTRgyPxq_e5i7Nccco5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
