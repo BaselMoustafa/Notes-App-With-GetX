@@ -26,9 +26,12 @@ jobs:
           
       - name: Clean dependencies
         run: flutter pub cache clean
-        
+
       - name: Install dependencies
         run: flutter pub get
+        
+      - name: upgrade win32
+        run: flutter pub upgrade win32
 
       - name: Build APK
         run: flutter build apk --release
