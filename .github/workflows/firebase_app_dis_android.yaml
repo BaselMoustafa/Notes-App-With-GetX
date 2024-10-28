@@ -17,7 +17,10 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'  # Specify Flutter version
-
+          
+      - name: Clean dependencies
+        run: flutter clean
+        
       - name: Install dependencies
         run: flutter pub get
 
