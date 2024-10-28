@@ -25,7 +25,7 @@ jobs:
           channel: 'stable'  # Specify Flutter version
           
       - name: Clean dependencies
-        run: flutter clean
+        run: flutter pub cache clean
         
       - name: Install dependencies
         run: flutter pub get
