@@ -1,0 +1,37 @@
+name: Build and Distribute Flutter APK to Firebase
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  build-and-distribute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'  # Specify Flutter version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Install Firebase CLI
+        run: curl -sL https://firebase.tools | bash
+
+      - name: Distribute APK to Firebase App Distribution
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}  # Set FIREBASE_CLI_TOKEN in GitHub secrets
+        run: |
+          firebase appdistribution:distribute ../build/app/outputs/flutter-apk/app-release.apk \
+            --app "1:889941125298:android:26d08f7e3cf413fcc501ab" \
+            --testers "basel.moustafa2000@gmail.com" \
+            --release-notes "From Githb Actions"
