@@ -44,7 +44,9 @@ jobs:
           firebase appdistribution:distribute ./build/app/outputs/flutter-apk/app-release.apk \
             --app "1:889941125298:android:26d08f7e3cf413fcc501ab" \
             --testers "basel.moustafa2000@gmail.com" \
-            --release-notes |
+            --release-notes "$(cat <<EOF
               🖐️Hi There 
-              This Release Is Tottaly Automatched With Github Actions With Change Build Number And Version Number
+              This release is fully automated with GitHub Actions, including automatic build number and version updates.
               Enjoy 🎉
+              EOF
+            )"
