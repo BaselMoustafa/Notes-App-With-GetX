@@ -1,5 +1,3 @@
-name: Build and Distribute Flutter APK to Firebase
-
 on:
   push:
     branches:
@@ -41,7 +39,7 @@ jobs:
 
       - name: Distribute APK to Firebase App Distribution
         env:
-          FIREBASE_TOKEN: 1//03ool9DDXdNABCgYIARAAGAMSNwF-L9IrSpCVqreDoxJ-9SddlrvTcEGtc3_7U9xIZ3-V8RCHLqhxBNQ9XKHEMjUcuhZUBM2TjKs  # Set FIREBASE_CLI_TOKEN in GitHub secrets
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}  # Set FIREBASE_CLI_TOKEN in GitHub secrets
         run: |
           firebase appdistribution:distribute ../build/app/outputs/flutter-apk/app-release.apk \
             --app "1:889941125298:android:26d08f7e3cf413fcc501ab" \
