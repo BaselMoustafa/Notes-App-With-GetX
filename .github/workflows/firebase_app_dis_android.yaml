@@ -41,7 +41,7 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}  # Set FIREBASE_CLI_TOKEN in GitHub secrets
         run: |
-          firebase appdistribution:distribute ../build/app/outputs/flutter-apk/app-release.apk \
+          firebase appdistribution:distribute ./build/app/outputs/flutter-apk/app-release.apk \
             --app "1:889941125298:android:26d08f7e3cf413fcc501ab" \
             --testers "basel.moustafa2000@gmail.com" \
             --release-notes "From Githb Actions"
